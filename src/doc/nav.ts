@@ -25,7 +25,8 @@ router.add({
         }
     },
     // "/tutorial/*": router.deferLoad(() => import('./tutorial/tutorial')),
-    "/examples/*": router.deferLoad(() => import('./examples/examples'))
+    "/examples/*": router.deferLoad(() => import('./examples/examples')),
+    "/repl": router.deferLoad(() => import('./repl/'))
 });
 router.init(navState, window, "#");
 
@@ -40,6 +41,7 @@ export const navBar = template(`(navState:NavigationState) => {
                     // <li @activeLink="/tutorial"> # tutorial # </li>
                     <li @activeLink="/examples"> # examples # </li>
                     <li> # getting-started # </li>
+                    <li @activeLink="/repl"> # repl # </li>
                     <li> # api # </li>
                     <li>
                         // github logo
